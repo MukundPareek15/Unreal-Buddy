@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# PyInstaller output
+dist/
+build/
+
+# uv
+.python-version
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Worker
+worker/node_modules/
+worker/.dev.vars
+worker/dist/
+
+# Cloudflare
+.wrangler/
+
+# OS
+.DS_Store
+*.xcuserstate
+Thumbs.db
+desktop.ini
+
+# Secrets & env
+.env
+*.env
+*.env.*
+*.env.local
+*secrets*
+
+# Editors
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Project-specific
+.claude/
+coding-plans/
+docs/
+releases/

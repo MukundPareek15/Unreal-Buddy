@@ -1,0 +1,22 @@
+# UnrealBuddy configuration
+# Edit this file to point UnrealBuddy at your own Cloudflare Worker deployment.
+
+# Your deployed Cloudflare Worker URL. Deploy the worker/ folder via
+# `wrangler deploy` and paste the resulting URL here. See README.md.
+worker_url = "https://unreal-buddy-proxy.your-subdomain.workers.dev"
+
+# Push-to-talk binding. Options: "ctrl+alt" (default), "right_ctrl"
+# (useful for international keyboards where Ctrl+Alt conflicts with AltGr).
+hotkey = "ctrl+alt"
+
+# Default Claude model. Options: "claude-sonnet-4-6" (fast, cheap),
+# "claude-opus-4-6" (slower, smarter). Switchable at runtime via the
+# model picker in the panel.
+default_model = "claude-sonnet-4-6"
+
+# Log verbosity. Options: "DEBUG", "INFO", "WARNING", "ERROR".
+log_level = "INFO"
+
+# Path to knowledge base folder. Each subfolder = one app's KB.
+# Default: %APPDATA%/UnrealBuddy/knowledge/
+# knowledge_dir = "C:/path/to/knowledge"
