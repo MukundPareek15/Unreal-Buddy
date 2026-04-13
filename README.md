@@ -37,9 +37,8 @@ Built on top of [Clicky](https://github.com/farzaa/clicky) by Farza Majeed, port
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/unreal-buddy.git
-cd unreal-buddy/clicky-py
-uv sync
+git clone https://github.com/MukundPareek15/Unreal-Buddy.git
+cd Unreal-Buddy
 ```
 
 ### 2. Deploy the Cloudflare Worker
@@ -47,7 +46,7 @@ uv sync
 The Worker is a tiny proxy that holds your Anthropic API key. The app never touches the key directly.
 
 ```bash
-cd ../worker
+cd worker
 npm install
 npx wrangler secret put ANTHROPIC_API_KEY
 npx wrangler deploy
@@ -58,7 +57,8 @@ Copy the deployed URL (e.g. `https://unreal-buddy-proxy.your-subdomain.workers.d
 ### 3. Configure and run
 
 ```bash
-cd ../clicky-py
+cd ../unreal_buddy-py
+uv sync
 uv run python -m unreal_buddy
 ```
 
@@ -73,7 +73,7 @@ Restart UnrealBuddy. The blue triangle should appear near your cursor. Press Ctr
 ## Build a standalone exe
 
 ```bash
-cd clicky-py
+cd unreal_buddy-py
 uv run pyinstaller unreal_buddy.spec
 ```
 
@@ -126,19 +126,19 @@ Drop `.md` files alongside it. No restart required — UnrealBuddy loads KB cont
 Python + PySide6 system tray app using asyncio (via qasync). The Anthropic API is proxied through a Cloudflare Worker.
 
 ```
-clicky-py/
-  unreal_buddy/           # Package
-    companion_manager.py    # Central state machine
-    ui/companion_widget.py  # Cursor-following overlay
-    ui/text_input_widget.py # Floating input panel
-    clients/                # LLM client (streaming + tool-use loop)
-    tools.py                # web_search + fetch_url tools
-    knowledge_base.py       # Per-app KB with window title matching
+unreal_buddy-py/
+  unreal_buddy/             # Package
+    companion_manager.py      # Central state machine
+    ui/companion_widget.py    # Cursor-following overlay
+    ui/text_input_widget.py   # Floating input panel
+    clients/                  # LLM client (streaming + tool-use loop)
+    tools.py                  # web_search + fetch_url tools
+    knowledge_base.py         # Per-app KB with window title matching
   tests/
-  unreal_buddy.spec         # PyInstaller build spec
-worker/                   # Cloudflare Worker proxy
-  src/index.ts              # Routes: /chat, /search
-knowledge/                # Unreal Engine KB
+  unreal_buddy.spec           # PyInstaller build spec
+worker/                     # Cloudflare Worker proxy
+  src/index.ts                # Routes: /chat, /search
+knowledge/                  # Unreal Engine KB
 ```
 
 **State flow:** IDLE → PROCESSING (screenshots + Claude + tools) → IDLE
@@ -146,7 +146,7 @@ knowledge/                # Unreal Engine KB
 ## Tests
 
 ```bash
-cd clicky-py
+cd unreal_buddy-py
 uv run pytest
 uv run ruff check .
 ```
@@ -157,4 +157,4 @@ UnrealBuddy is built on top of [Clicky](https://github.com/farzaa/clicky) by [Fa
 
 ## License
 
-MIT — see [clicky-py/LICENSE](clicky-py/LICENSE).
+MIT — see [unreal_buddy-py/LICENSE](unreal_buddy-py/LICENSE).

@@ -37,8 +37,8 @@ Built on top of [Clicky](https://github.com/farzaa/clicky) by Farza Majeed, port
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/unreal-buddy.git
-cd unreal-buddy
+git clone https://github.com/MukundPareek15/Unreal-Buddy.git
+cd Unreal-Buddy
 ```
 
 ### 2. Deploy the Cloudflare Worker
@@ -57,7 +57,7 @@ Copy the deployed URL (e.g. `https://unreal-buddy-proxy.your-subdomain.workers.d
 ### 3. Install and run UnrealBuddy
 
 ```bash
-cd clicky-py
+cd ../unreal_buddy-py
 uv sync
 uv run python -m unreal_buddy
 ```
@@ -73,7 +73,7 @@ Restart UnrealBuddy. The blue triangle should appear near your cursor. Press Ctr
 ## Build a standalone exe
 
 ```bash
-cd clicky-py
+cd unreal_buddy-py
 uv run pyinstaller unreal_buddy.spec
 ```
 
@@ -124,7 +124,7 @@ Drop `.md` files alongside it. No restart required — UnrealBuddy loads KB cont
 ## Tests and linting
 
 ```bash
-cd clicky-py
+cd unreal_buddy-py
 uv run pytest
 uv run ruff check .
 ```
